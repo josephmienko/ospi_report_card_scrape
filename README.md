@@ -4,7 +4,7 @@ This repo contains a python script to gather data to compare elementary schools 
 
 ## How the Script (`ospi_report_card_scrape.py`) Works
 
-✅ Scrapes report cards all elementary schools in Lake Washington School District.
+✅ Scrapes report cards all elementary schools in Lake Washington School District (update as needed).
 
 ✅ Extracts Tableau generated images dynamically from the OSPI Report Card site.
 
@@ -23,3 +23,18 @@ This repo contains a python script to gather data to compare elementary schools 
 ✅ Runs the scraper and saves data to lake_washington_elementary_report_cards.csv.
 
 ✅ Handles errors & dependencies automatically.
+
+## To Run
+
+Give the setup script execute permission
+
+```sh
+chmod +x setup_and_run.sh
+```
+
+Subsequently (i.e. once your dependencies are in place). 
+
+```sh
+python3 scrape_ospi.py
+```
+
