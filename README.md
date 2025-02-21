@@ -15,7 +15,7 @@ This repository contains two scripts:
 Run the `setup.sh` script to set up dependencies and execute the entire workflow.
 
 ```bash
-bash setup.sh [options]
+bash setup.sh
 ```
 
 ### 2. Arguments
