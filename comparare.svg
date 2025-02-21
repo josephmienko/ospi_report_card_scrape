@@ -3,10 +3,22 @@
     <style xmlns="http://www.w3.org/2000/svg">
         /* === VARIABLES === */
         :root {
-            --heading-color: light-dark(#272727, #d9d9d9);
-            --lead-color: light-dark(#838E95, #6b6b7b);
-            --transition-color: light-dark(#DEE2E6, #E5E9EF);
-            --body-color: light-dark(#2C2C2C, #D4D4D4);
+            --heading-color: #272727;
+            --lead-color: #838E95;
+            --transition-color: #DEE2E6;
+            --body-color: #2C2C2C;
+        }
+
+
+        /* Styles for dark mode */
+
+        @media (prefers-color-scheme: dark) {
+        
+            --heading-color: #d9d9d9;
+            --lead-color: #6b6b7b;
+            --transition-color: #E5E9EF;
+            --body-color: #D4D4D4;
+        
         }
 
         /* === FONT IMPORT === */
