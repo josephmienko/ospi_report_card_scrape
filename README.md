@@ -1,3 +1,5 @@
+![Project BRand](https://raw.githubusercontent.com/josephmienko/ospi_report_card_scrape/refs/heads/main/comparare.svg)
+
 <<<<<<< HEAD
 # comparare
 
