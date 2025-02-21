@@ -23,14 +23,13 @@ bash setup.sh [options]
 This script supports the following optional arguments:
 
 - `--districts "District Name 1" "District Name 2"` (Fetch data for specific districts.)
-
 - `--elementary_only` (Restrict output to elementary schools.)
-
 - If no arguments are given, the script fetches all schools.
 
 #### `recognize.py`
 
-No additional arguments required. The `recognize.py` script processes images downloaded by the scraper. The `--districts` and `--elementary_only` arguments are nontheless available if you first obtain a larger set of data with `scrape.py` that needs filtering..
+- No additional arguments required. The `recognize.py` script processes images downloaded by the scraper.
+- The `--districts` and `--elementary_only` arguments are nontheless available if you first obtain a larger set of data with `scrape.py` that needs filtering..
 
 ## Output
 - Scraped school data is saved in `data/schools.json`.
