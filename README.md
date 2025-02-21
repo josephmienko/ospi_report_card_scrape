@@ -1,5 +1,8 @@
 # comparare
-##### Python scripts to facilitate comparison of schools on the basis of performance in reading, math, and science. 
+
+**comparare** = kəmˈpɛəɹə(ɹ) - to compare, match, place together, couple
+
+Python scripts to facilitate comparison of schools on the basis of performance in reading, math, and science. 
 
 
 ## Overview
