@@ -5,9 +5,9 @@
 ## Overview
 This repository contains two scripts:
 
-1. `scrape.py` - Scrapes school data and report card images from OSPI.
+- `scrape.py` - Scrapes school data and report card images from OSPI.
 
-2. `recognize.py` - Processes downloaded images using OCR to extract data.
+- `recognize.py` - Processes downloaded images using OCR to extract data.
 
 ## Installation and Usage
 
