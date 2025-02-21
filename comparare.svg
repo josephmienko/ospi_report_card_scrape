@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500">
+
+    <style>
+        /* === VARIABLES === */
+        :root {
+            --heading-color: light-dark(#272727, #d9d9d9);
+            --lead-color: light-dark(#838E95, #6b6b7b);
+            --transition-color: light-dark(#E5E9EF; #DEE2E6);
+            --body-color: light-dark(#2C2C2C, #D4D4D4);
+        }
+
+        /* === FONT IMPORT === */
+        @font-face {
+            font-family: 'Playfair Display';
+            src: url('data:font/woff2;base64, ...') format('woff2');
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Playfair Display';
+            src: url('data:font/woff2;base64, ...') format('woff2');
+            font-style: italic;
+        }
+
+        /* === TEXT FADE ANIMATION === */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* === TEXT STYLES === */
+        .fade-text-ltr tspan {
+            animation: fadeIn 2s ease-in-out forwards;
+            font-family: 'Playfair Display';
+            font-size: 60px;
+            font-weight: 700;
+        }
+
+        .fade-text-wrd,
+        .fade-text-def {
+            animation: fadeIn 1s ease-in-out forwards;
+            font-family: 'Playfair Display';
+            font-weight: 400;
+        }
+
+        .fade-text-wrd {
+            font-size: 40px;
+        }
+
+        .fade-text-def {
+            font-size: 24px;
+            animation-delay: 3s;
+        }
+
+        /* === HORIZONTAL LINE ANIMATION === */
+        #HRule {
+            stroke-dasharray: 930; /* Match line length */
+            stroke-dashoffset: 930; /* Initially hidden */
+            animation: drawHRule 2s ease-in-out forwards;
+            animation-delay: 3s;
+        }
+
+        @keyframes drawHRule {
+            from { stroke-dashoffset: 930; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* === LETTER FADE-IN TIMING === */
+        .fade-text-ltr tspan:nth-child(n) {
+            animation-delay: calc((n - 1) * 0.1s);
+        }
+
+        /* === ELEMENT FADE-IN TIMING === */
+        #Phonetic { animation-delay: 1s; }
+        #PartOfSpeech { animation-delay: 2s; }
+        #Language { animation-delay: 3s; }
+    </style>
+
+    <!-- === MAIN WORD === -->
+    <text x="0" y="50" class="fade-text-ltr">
+        <tspan fill="var(--heading-color)" dx="0">c</tspan>
+        <tspan fill="var(--heading-color)" dx="0">o</tspan>
+        <tspan fill="var(--heading-color)" dx="0">m</tspan>
+        <tspan fill="var(--heading-color)" dx="0">p</tspan>
+        <tspan fill="var(--heading-color)" dx="0">a</tspan>
+        <tspan fill="var(--heading-color)" dx="0">r</tspan>
+        <tspan fill="var(--heading-color)" dx="0">a</tspan>
+        <tspan fill="var(--heading-color)" dx="0">r</tspan>
+        <tspan fill="var(--heading-color)" dx="0">e</tspan>
+    </text>
+
+    <!-- === PHONETIC & GRAMMATICAL INFO === -->
+    <text fill="var(--lead-color)" x="0" y="110" class="fade-text-wrd" id="Phonetic">[kom.paˈraː.re]</text>
+    <text fill="var(--lead-color)" x="275" y="110" class="fade-text-wrd" id="PartOfSpeech" style="font-style: italic">verb</text>
+    <text fill="var(--lead-color)" x="370" y="110" class="fade-text-wrd" id="Language">Latin</text>
+
+    <!-- === HORIZONTAL LINE === -->
+    <line x1="2.5" y1="140" x2="930" y2="140" stroke="var(--transition-color)" stroke-width="3" id="HRule" aria-hidden="true"/>
+
+    <!-- === DEFINITION === -->
+    <text x="2.5" y="185" class="fade-text-def">
+        <tspan fill="var(--body-color)">To couple, match, or bring together, from </tspan>
+        <tspan fill="var(--body-color)" style="font-style: italic">com- </tspan>
+        <tspan fill="var(--body-color)">along with, </tspan>
+        <tspan fill="var(--body-color)" style="font-style: italic">parare </tspan>
+        <tspan fill="var(--body-color)">(to prepare, provide).</tspan> 
+        <tspan fill="var(--body-color)" x="2.5" dy="1.2em">Ultimately meaning to match or compare.</tspan>
+    </text>
+
+</svg>
