@@ -1,40 +1,56 @@
-# ospi_report_card_scrape
+# comparare
+##### Python scripts to facilitate comparison of schools on the basis of performance in reading, math, and science. 
 
-This repo contains a python script to gather data to compare elementary schools within a Washington State School District. 
 
-## How the Script (`ospi_report_card_scrape.py`) Works
+## Overview
+This repository contains two scripts:
 
-✅ Scrapes report cards all elementary schools in Lake Washington School District (update as needed).
+1. `scrape.py` - Scrapes school data and report card images from OSPI.
 
-✅ Extracts Tableau generated images dynamically from the OSPI Report Card site.
+2. `recognize.py` - Processes downloaded images using OCR to extract data.
 
-✅ Uses OpenCV preprocessing for better OCR accuracy.
+## Installation and Usage
 
-✅ Extracts six performance metrics per school: The percent of students at the school with Foundational Grade-level Knowledge in English Language Arts (ELA), Math, and Science and the percent of children at the school on track to complete college coursework in ELA, Math, or Science. 
+### 1. Setup and Run
+Run the `setup.sh` script to set up dependencies and execute the entire workflow.
 
-✅ Saves the results in a structured CSV file
-
-## What The Setup Script (`setup_and_run.sh`) Does (for a Mac)
-
-✅ Installs all required dependencies (Python, Tesseract, Chrome, ChromeDriver).
-
-✅ Sets up the OSPI scraping script automatically.
-
-✅ Runs the scraper and saves data to lake_washington_elementary_report_cards.csv.
-
-✅ Handles errors & dependencies automatically.
-
-## To Run
-
-Give the setup script execute permission
-
-```sh
-chmod +x setup_and_run.sh
+```bash
+bash setup.sh [options]
 ```
 
-Subsequently (i.e. once your dependencies are in place). 
+### 2. Arguments
+#### `scrape.py`
+This script supports the following optional arguments:
 
-```sh
-python3 scrape_ospi.py
+- `--districts "District Name 1" "District Name 2"` (Fetch data for specific districts.)
+
+- `--elementary_only` (Restrict output to elementary schools.)
+
+- If no arguments are given, the script fetches all schools.
+
+#### `recognize.py`
+
+No additional arguments required. The `recognize.py` script processes images downloaded by the scraper. The `--districts` and `--elementary_only` arguments are nontheless available if you first obtain a larger set of data with `scrape.py` that needs filtering..
+
+## Output
+- Scraped school data is saved in `data/schools.json`.
+- Extracted report card images are stored in `data/images/`.
+- OCR results are compiled into `extracted_report_cards.csv`.
+
+## Requirements
+- Python 3
+- Virtual environment (`venv`)
+- Dependencies installed in `requirements.txt`
+
+## Troubleshooting
+If errors occur, try running:
+```bash
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
+Then re-run the scripts manually:
+```bash
+python3 scrape.py
+python3 recognize.py
+```
