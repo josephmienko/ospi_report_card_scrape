@@ -5,7 +5,7 @@
         :root {
             --heading-color: light-dark(#272727, #d9d9d9);
             --lead-color: light-dark(#838E95, #6b6b7b);
-            --transition-color: light-dark(#E5E9EF, #DEE2E6);
+            --transition-color: light-dark(#DEE2E6, #E5E9EF);
             --body-color: light-dark(#2C2C2C, #D4D4D4);
         }
 
